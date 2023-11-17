@@ -19,7 +19,6 @@ class _FotoState extends State<Foto> {
   late DateTime dataHora;
   late double latitude;
   late double longitude;
-  bool _cameraTraseiraSelecionada = false;
 
   void obterDataEHora() {
     setState(() {
@@ -146,8 +145,6 @@ class _FotoState extends State<Foto> {
               return const Center(child: CircularProgressIndicator());
             }
           }),
-      Container(
-          child: Row(children: <Widget>[
         FloatingActionButton(
           clipBehavior: Clip.antiAlias,
           onPressed: () {
@@ -156,15 +153,6 @@ class _FotoState extends State<Foto> {
           },
           child: const Icon(Icons.circle),
         ),
-        FloatingActionButton(
-            clipBehavior: Clip.antiAlias,
-            onPressed: () {
-              setState(() =>
-                  _cameraTraseiraSelecionada = !_cameraTraseiraSelecionada);
-              initCamera(widget.cameras[_cameraTraseiraSelecionada ? 0 : 1]);
-            },
-            child: const Icon(Icons.flip_camera_android))
-      ]))
-    ]);
+      ]);
   }
 }

@@ -12,10 +12,6 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  String sexo = 'F';
-  String nome = 'Carla';
-  String ultimo_registro = '07/09 08:30';
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,11 +21,10 @@ class _HomeState extends State<Home> {
         body: Container(
           padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 20),
           child: Column(children: <Widget>[
-            Padding(
-                padding: const EdgeInsets.symmetric(vertical: 23),
-                child: Text(
-                  sexo == 'M' ? 'Bem-vindo, $nome' : 'Bem-vinda, $nome',
-                  style: const TextStyle(
+            const Padding(
+                padding: EdgeInsets.symmetric(vertical: 23),
+                child: Text('Bem-vindo(a)!',
+                  style: TextStyle(
                     fontSize: 22,
                   ),
                 )),
@@ -69,11 +64,6 @@ class _HomeState extends State<Home> {
                 Navigator.push(context, MaterialPageRoute(builder: (context) => const Historico()));
               },
             ),
-
-            Padding(
-                padding: const EdgeInsets.only(top: 40),
-                child: Text('Último registro: $ultimo_registro',
-                    style: const TextStyle(color: Colors.black38))),
           ]),
         ));
   }
